@@ -1,0 +1,441 @@
+@font-face {
+    font-family: ketsiyo;
+    src: url(../font/Ketsiyo.ttf) format('truetype');
+}
+@font-face {
+    font-family: syne;
+    src: url(../font/static/Syne-Regular.ttf) format('truetype');
+}
+@mixin htext {
+    font-weight: 500;
+    color: #074242;
+    line-height: 5.2rem;
+    letter-spacing: 0.01px;
+    word-spacing: 0.03px;
+    font-family: var(--ketsiyo);
+}
+@mixin h3text {
+    font-weight: 600;
+    color: #074242;
+    line-height: 2.5rem;
+    font-size: 1.65rem;
+    letter-spacing: 0.3px;
+    word-spacing: 0.5px;
+    font-family: var(--syne);
+}
+@mixin h4before {
+    position: absolute;
+    content: '>';
+    top: 0;
+    left: 40%;
+    color: #074242;
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-family: var(--syne);
+}
+
+$fontcolor: #074242;
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+html
+{
+    font-size: 62.5%;
+}
+:root
+{
+    --syne: syne, sans-serif;
+    --ketsiyo: ketsiyo, sans-serif;
+}
+body
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 14px;
+    min-height: 100vh;
+}
+header
+{
+    padding: 0 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo h2
+{
+    font-size: 1.7rem;
+    font-family: var(--ketsiyo);
+    text-transform: uppercase;
+    font-weight: 600;
+    // transform: translateX(-100%);
+}
+header .nav-menu ul
+{
+    list-style-type:none;
+    font-size:15px;
+    display: flex;
+    flex-direction: row;
+}
+header .nav-menu ul li
+{
+    margin-right: 4rem;
+}
+header .nav-menu ul li:last-child
+{
+    margin-right: 0rem;
+}
+header .nav-menu ul li a
+{
+    font-family: var(--syne);
+    font-size: 1.3rem;
+    color: #0A2424;
+    font-weight: 600;
+}
+.banner
+{
+    position: relative;
+    margin-bottom: 4rem;
+}
+.banner .overlay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: rgba(17, 38, 26, 0.3);
+}
+.banner .container-fluid
+{
+    padding: 0;
+}
+.banner .img-div
+{
+    width: 100%;
+    max-height: 78vh;
+    overflow-y: auto;
+    position: relative;
+    transform-origin: left top;
+}
+.banner .img-div::-webkit-scrollbar
+{
+    display: none;
+}
+.banner .img-div img
+{
+    width: 100%;
+    height: 175%;
+}
+.banner .img-div .text-div
+{
+    position: absolute;
+    top: 38%;
+    left: 7%;
+} 
+.banner .img-div .text-div h1
+{
+    font-size: 5.5rem;
+    width: 70%;
+    text-transform: capitalize;
+    font-family: var(--ketsiyo);
+    color: #fff;
+    word-spacing: 3px;
+    margin-bottom: 1.5rem;
+    line-height: 6.1rem;
+    position: relative;
+}
+.banner .img-div .text-div h1::before
+{
+    position: absolute;
+    content: '';
+    top: -60px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background-color: #fff;
+}
+.banner .img-div .text-div p
+{
+    color: #fff;
+    width: 60%;
+    font-size: 1.3rem;
+    letter-spacing: 0.18px;
+    word-spacing: 0.5px;
+    line-height: 2.2rem;
+    font-family: var(--syne);
+}
+.banner .text-div .d-flex button
+{
+    width: 144px;
+    height: 38px;
+    background-color: #fff;
+    color: #074242;
+    font-size: 1.5rem;
+    font-family: var(--syne);
+    font-weight: 600;
+    margin-right: 1.5rem;
+}
+.banner .text-div .d-flex p
+{
+   position: relative;
+}
+.banner .text-div .d-flex p::before
+{
+    position: absolute;
+    content: '>';
+    font-size: 1.8rem;
+    font-family: var(--syne);
+    color: #fff;
+    left: 13.5%;
+    top: -0.8px;
+}
+
+.section2
+{
+    position: relative;
+    margin: 25rem 0;
+    .text_div
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;       
+        flex-direction: column;
+        text-align: center;
+        h1
+        {
+            @include htext;
+            font-size: 4.9rem;
+        }
+        p
+        {
+            font-size: 15px;
+            width: 49.8%;
+            margin: 1.2rem 0 5rem;
+            color: $fontcolor;
+            font-family: var(--syne);
+        }
+    }
+    .slider_div
+    {
+        .img_div
+        {
+            position: relative;
+            width: 100%;
+            max-height: 600px;
+            img
+            {
+                width: 100%;
+                height: 100%;
+            }
+            .owl-carousel
+            {
+                position: absolute;
+                bottom: -4%;
+                left: 0;
+                overflow: hidden;
+                perspective: 800;
+                .card_upper
+                {
+                    width: 255px;
+                    height: 320px;
+                    border-radius: 10px;
+                    background-color: rgba(255, 255, 255, 0.25);
+                    backdrop-filter: blur(8px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .card
+                {
+                    border-radius: 10px;
+                    padding: 15px;
+                    width: 94%;
+                    height: 95%;
+                    background-color: #fff;
+                    .con
+                    {
+                        position: absolute;
+                        top: 49%;
+                        left: 7.5%;
+                        max-width: 86%;
+                        h3
+                        {
+                            @include h3text;
+                        }
+                        p
+                        {
+                            margin-bottom: 1.9rem;
+                            color: #000;
+                            opacity: 0.85;
+                            font-family: var(--syne)
+                        }
+                        h4
+                        {
+                            @include h3text;
+                            font-size: 15px;
+                            position: relative;
+                        }
+                        h4::before
+                        {
+                            @include h4before;
+                        }
+                    }
+                    img
+                    {
+                        width: 220px;
+                        height: 300px;
+                        position: absolute;
+                        top: -20%;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .insideDetail
+        {
+            visibility: hidden;
+            position: absolute;
+            top: 58%;
+            left: 40%;
+            h3
+            {
+                @include h3text;
+                width: 80%;
+                margin-bottom: 1rem;
+                line-height: 2rem;
+                text-transform: capitalize;
+            }
+            img
+            {
+                width: 300px;
+                height: 400px;
+            }
+            .maincon
+            {
+                width: 280px;
+                height: 300px;
+                border-radius: 15px;
+                margin-top: -174px;
+                background-color: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(8px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(160%) skew(5deg);
+                transform-origin: bottom left;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+                .card
+                {
+                    border-radius: 15px;
+                    width: 94%;
+                    padding: 22px;
+                    .head
+                    {
+                        display: flex;
+                        justify-content: space-between;
+                        .div2 
+                        {
+                           span
+                           {
+                                display: block;
+                                width: 15px;
+                                height: 2px;
+                                background-color: $fontcolor;
+                                cursor: pointer;
+                           }
+                           span:first-child
+                           {
+                               transform: rotate(45deg);
+                               transform-origin: left;
+                           }
+                           span:last-child
+                           {
+                               transform: rotate(-45deg);
+                               transform-origin: 10px 5px;
+                           }
+                        }
+                    }
+                    .insideCon
+                    {
+                        p
+                        {
+                            font-family: var(--syne);
+                        }
+                        p:nth-child(2)
+                        {
+                            margin-bottom: 2rem;
+                        }
+                        h4
+                        {
+                            @include h3text;
+                            font-size: 15px;
+                            position: relative;
+                        }
+                        h4::before
+                        {
+                            @include h4before;
+                            left: 28%;
+                        }
+                    }
+                }
+            }
+            .maincon.active
+            {
+                opacity: 1;
+                transition-delay: 0.2s;
+                transition-duration: 0.5s;
+                transform: translateX(0%) skew(0deg);
+            }
+        }
+        .insideDetail.active
+        {
+            visibility: visible;
+        }
+        .owl-item > div {
+            cursor: pointer;
+            margin: 6% 4%;
+            transition: margin 0.4s ease;
+          }
+          .owl-item.center > div {
+            cursor: auto;
+            margin: 13px 25px 25px -10px;
+            transform: scale(1.2);
+            transition: all 0.3s ease;
+          }
+        //   .owl-item:not(.center) > div:hover {
+        //     opacity: .75;
+        //   }
+          .owl-carousel .owl-stage-outer {
+            transform: rotateY(-5deg);
+            margin-left: -3.8%;
+            height: 60vh;
+            .owl-stage
+            {
+                height: 100%;
+            }
+        }
+        .owl-carousel .owl-item {
+            transform: rotateY(-18deg);
+            margin-top: 6rem;
+        }
+    }
+}
+.section2::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 24%;
+    width: 53vw;
+    height: 162px;
+    border-radius: 50%;
+    background-color: #074242;
+    background-repeat: no-repeat;
+    transform: rotate(-20deg);
+    opacity: 0.06;
+    z-index: -5;
+}
